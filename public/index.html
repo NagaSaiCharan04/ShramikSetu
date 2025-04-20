@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WorkConnect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  
+
+
+
+
+
+   
+    :root {
+      --bg-color: #f9fafb;
+      --text-color: #1f2937;
+      --card-bg: white;
+      --btn-bg: #2563eb;
+      --btn-hover: #1e40af;
+      --border-color: #d1d5db;
+    }
+ .logo-wrapper{
+ 
+  display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin-bottom: 0;
+ }
+
+.img{
+  width: 400px;
+  height: 350px;
+  display: block;
+}
+
+.tagline {
+  font-size: 1.2rem;
+font-weight: 500;
+color: var(--text-color);
+ opacity: 0.9;
+}
+
+   
+  
+    [data-theme="dark"] {
+      --bg-color: #1f2937;
+      --text-color: #f3f4f6;
+      --card-bg: #374151;
+      --btn-bg: #3b82f6;
+      --btn-hover: #2563eb;
+      --border-color: #4b5563;
+    }
+  
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      
+    }
+  
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+  
+    .container {
+      max-width: 1200px;
+      margin: 0;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+    }
+  
+    header, footer {
+      text-align: center;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1s ease;
+    }
+  
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      animation: fadeInUp 0.8s ease;
+    }
+  
+    .input, .textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      background-color: transparent;
+      color: inherit;
+    }
+  
+    .btn {
+      background-color: var(--btn-bg);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  
+    .btn:hover {
+      background-color: var(--btn-hover);
+      transform: scale(1.03);
+    }
+  
+    .theme-toggle {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: var(--btn-bg);
+      border: none;
+      color: white;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  
+    footer {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: var(--border-color);
+    }
+  
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+  
+  
+</head>
+<body>
+  <header class="container">
+   <div class="logo-wrapper">
+     <img class="img" src="./upscalemedia-transformed.png" alt="ShramikSetu Logo" />
+     <p class="tagline">Bridging the gap between daily wage workers and employers</p>
+   </div>
+    </header>
+    
+
+  <main class="container grid">
+   
+
+    <section class="card">
+     <h2>Worker Signup (కార్మికుల నమోదు)</h2>
+     <input type="text" id="name" class="input" placeholder="Name (పేరు)" />
+     <input type="text" id="skills" class="input" placeholder="Skills (నైపుణ్యాలు - ఉదా: ప్లంబర్, ఎలక్ట్రీషియన్)" />
+     <input type="text" id="location" class="input" placeholder="Location (ప్రాంతం)" />
+     <input type="text" id="availability" class="input" placeholder="Availability (లభ్యత)" />
+     <input type="text" id="contact" class="input" placeholder="Contact Info (ఫోన్ లేదా ఇమెయిల్)" />
+     <textarea id="bio" class="textarea" placeholder="Brief Bio or Experience (సంక్షిప్త పరిచయం లేదా అనుభవం)"></textarea>
+    <button class="btn" onclick="registerWorker()">Register (నమోదు చేయండి)</button>
+      </section>
+      <section class="card">
+      <h2>Employer Search (ఉద్యోగ దాతల కోసం శోధన)</h2>
+     <input type="text" id="searchSkill" class="input" placeholder="Search by skill (నైపుణ్యం ద్వారా వెతకండి)" />
+     <input type="text" id="searchLocation" class="input" placeholder="Search by location (ప్రాంతం ద్వారా వెతకండి)" />
+     <input type="text" id="searchAvailability" class="input" placeholder="Filter by availability (లభ్యత ఆధారంగా ఫిల్టర్ చేయండి)" />
+      <button class="btn" onclick="filterWorkers()">Find Workers (కార్మికులను వెతకండి)</button>
+        </section>
+        
+      
+  </main>
+
+  <section class="container">
+    <h2 style="font-weight: 600; margin-top: 2rem;">Registered Workers</h2>
+    <div id="workerList" class="grid"></div>
+  </section>
+
+  <footer class="container">
+    © 2025 WorkConnect. All rights reserved.
+  </footer>
+
+  <script>
+    const API_BASE = 'http://localhost:3000';
+
+    async function registerWorker() {
+      const name = document.getElementById("name").value;
+      const skills = document.getElementById("skills").value;
+      const location = document.getElementById("location").value;
+      const availability = document.getElementById("availability").value;
+      const contact = document.getElementById("contact").value;
+      const bio = document.getElementById("bio").value;
+
+      if (!name || !skills || !location || !contact) {
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const worker = { name, skills, location, availability, contact, bio };
+
+      try {
+        const res = await fetch(API_BASE + '/workers', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(worker)
+        });
+        if (!res.ok) throw new Error("Error registering worker");
+        
+        document.querySelectorAll(".input, .textarea").forEach(i => i.value = "");
+        loadWorkers();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function loadWorkers() {
+      const container = document.getElementById("workerList");
+      container.innerHTML = "<p>Loading...</p>";
+      try {
+        const res = await fetch(API_BASE + '/workers');
+        const workers = await res.json();
+        renderWorkers(workers);
+      } catch (err) {
+        container.innerHTML = "<p>Failed to load workers.</p>";
+        console.error(err);
+      }
+    }
+
+    function renderWorkers(data) {
+      const container = document.getElementById("workerList");
+      container.innerHTML = "";
+      data.forEach(worker => {
+        const div = document.createElement("div");
+        div.className = "card worker-card";
+        div.innerHTML = `
+          <h3 style="font-weight: 600;">${worker.name}</h3>
+          <p><strong>Skill:</strong> ${worker.skills}</p>
+          <p><strong>Location:</strong> ${worker.location}</p>
+          <p><strong>Availability:</strong> ${worker.availability}</p>
+          <p>${worker.bio}</p>
+          <button class="btn" onclick="alert('Contact: ${worker.contact}')">Message</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    async function filterWorkers() {
+      const skill = document.getElementById("searchSkill").value;
+      const location = document.getElementById("searchLocation").value;
+      const availability = document.getElementById("searchAvailability").value;
+      const queryParams = new URLSearchParams({ skill, location, availability });
+
+      try {
+        const res = await fetch(API_BASE + '/workers/search?' + queryParams.toString());
+        const workers = await res.json();
+        renderWorkers(workers);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  if (currentTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+  }
+}
+
+window.onload = () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  loadWorkers();
+};
+
+
+    window.onload = loadWorkers;
+  </script>
+</body>
+</html>
